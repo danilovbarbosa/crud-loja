@@ -1,5 +1,5 @@
-from models import Categoria, Produto
-from util import Arquivo  
+from .models import Categoria, Produto
+from .util import Arquivo  
 
 
 class CategoriaDAO:
