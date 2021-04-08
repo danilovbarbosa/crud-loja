@@ -13,6 +13,9 @@ class CategoriaDAO:
 
 
     def remover(self):
+        '''
+        TODO: implementar
+        '''
         return 0
 
 
@@ -24,7 +27,7 @@ class CategoriaDAO:
     @staticmethod
     def procurar_por_nome(nome_do_arquivo, nome):
         '''
-        return: irá retornar o id da categoria
+        @return: irá retornar o id da categoria
         '''
         lista_de_categorias = Arquivo.ler(nome_do_arquivo).splitlines()
         for categoria in lista_de_categorias:
@@ -43,6 +46,9 @@ class ProdutoDAO:
 
 
     def remover(self):
+        '''
+        TODO: implementar
+        '''
         return 0
 
 
@@ -50,13 +56,3 @@ class ProdutoDAO:
         produtos = Arquivo.ler(self.nome_do_arquivo).splitlines()
 
         return produtos
-
-
-if __name__ == '__main__':
-    id_categoria = CategoriaDAO.procurar_por_nome("eta.txt", "NOmecategoria")
-
-    produto = Produto("Produto1", 30, "DescricaoProduto", id_categoria)
-    produto_dao = ProdutoDAO("produto.txt")
-    produto_dao.inserir(produto.__str__())
-    
-    print(produto_dao.listar())
