@@ -15,3 +15,6 @@ class Produto:
         self.categoria = categoria
 
     
+    def __str__(self):
+        return self.nome + ", " + self.valor + ", " + self.descricao + ", " + self.categoria
+        

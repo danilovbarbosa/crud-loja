@@ -4,11 +4,12 @@ from util import Arquivo
 
 class CategoriaDAO:
     def __init__(self, nome_do_arquivo):
-        self.arquivo = Arquivo.escrever(nome_do_arquivo, "")
+        self.nome_do_arquivo = nome_do_arquivo
+        Arquivo.criar(nome_do_arquivo)
 
 
-    def inserir(self): 
-        return 0
+    def inserir(self, categoria): 
+        Arquivo.escrever(self.nome_do_arquivo, categoria)
 
 
     def remover(self):
@@ -16,15 +17,20 @@ class CategoriaDAO:
 
 
     def listar(self):
-        return 0
+        categorias = Arquivo.ler(self.nome_do_arquivo).splitlines()
+        # categorias = [c for c in list(categorias.split() if "\n" in x]
+
+
+        return categorias
 
 class ProdutoDAO:
-    def __init__(self):
-        pass
+    def __init__(self, nome_do_arquivo):
+        self.nome_do_arquivo = nome_do_arquivo
+        Arquivo.criar(nome_do_arquivo)
 
 
-    def inserir(self): 
-        return 0
+    def inserir(self, produto): 
+        Arquivo.escrever(self.nome_do_arquivo, produto)
 
 
     def remover(self):
@@ -35,5 +41,3 @@ class ProdutoDAO:
         return 0
 
 
-if __name__ == '__main__':
-    CategoriaDAO("eta")
