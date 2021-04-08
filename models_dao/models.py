@@ -2,18 +2,6 @@ class Categoria:
     def __init__(self, nome, descricao):
         self.nome = nome
         self.descricao = descricao
-    
-
-    def criar(self):
-        return 0
-
-
-    def remover(self):
-        return 0
-
-    
-    def listar(self):
-        return 0
 
 
     def __str__(self):
@@ -27,13 +15,3 @@ class Produto:
         self.categoria = categoria
 
     
-    def criar(self):
-        return 0
-
-
-    def remover(self):
-        return 0
-
-    
-    def listar(self):
-        return 0
