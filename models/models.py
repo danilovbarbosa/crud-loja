@@ -1,5 +1,11 @@
 class Categoria:
-    pass
+    def __init__(self, nome, descricao):
+        self.nome = nome
+        self.descricao = descricao
 
 class Produto:
-    pass
+    def __init__(self, nome, valor, descricao, categoria):
+        self.nome = nome
+        self.descricao = descricao
+        self.valor = valor
+        self.categoria = categoria
