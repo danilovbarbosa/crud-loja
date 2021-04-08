@@ -38,10 +38,11 @@ def escolher_opcao():
         inserir_produto()
 
     elif opcao == "3":
-        print(categoria_dao.listar())
+        imprimir_lista_de_categoria()
 
     elif opcao == "4":
-        print(produto_dao.listar())
+        imprimir_lista_de_produto()
+
     else:
         print("Opção escolhida não corresponde as possibilidades indicadas.")
 
@@ -61,4 +62,12 @@ def inserir_produto():
     categoria = str(input("Digite o nome de uma categoria já registrada: "))
 
     produto = Produto(nome, valor, descricao, categoria)
-    produto_dao.inserir(categoria.__str__())
+    produto_dao.inserir(produto.__str__())
+
+
+def imprimir_lista_de_categoria():
+    print(categoria_dao.listar())
+
+
+def imprimir_lista_de_produto():
+    print(produto_dao.listar())
