@@ -1,11 +1,14 @@
-class IArquivo:
+from pathlib import Path
+
+class Arquivo:
     @staticmethod
     def escrever():
-        return 0    
+        arquivo = open("nome-do-arquivo", 'r', encoding="utf8")    
 
 
     @staticmethod
     def ler():
+        with q.open() as f: f.readline()
         return 0    
 
     
