@@ -1,4 +1,7 @@
 from pathlib import Path
+import io
+
+
 
 class Arquivo:
     @staticmethod
@@ -8,16 +11,41 @@ class Arquivo:
 
 
     @staticmethod
+    def contar_linhas(nome_do_arquivo):
+        try:
+            arquivo = open(nome_do_arquivo, 'r')
+            quantidade_de_linhas = len(arquivo.readlines())
+            arquivo.close()
+
+            return quantidade_de_linhas
+        except FileNotFoundError:
+            return 0
+
+
+    @staticmethod
     def escrever(nome_do_arquivo, linha):
         '''
         >>> nome = "teste"
         >>> escrever(nome)
 
         '''
-        arquivo = Path(nome_do_arquivo).open('a')
-        arquivo.write(linha + '\n')
-        arquivo.close()
-        return arquivo 
+
+        quantidade_atual_de_linhas = Arquivo.contar_linhas(nome_do_arquivo)
+        arquivo = open(nome_do_arquivo, 'a')
+        try:
+            arquivo.write(str(quantidade_atual_de_linhas) + ', ' + linha + '\n')
+
+            return arquivo 
+
+        except io.UnsupportedOperation:
+            arquivo.write("0, " + linha + '\n')
+
+            return arquivo 
+
+        finally:
+            arquivo.close()
+
+
 
     @staticmethod
     def ler(nome_do_arquivo):
