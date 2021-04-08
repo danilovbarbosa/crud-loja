@@ -1,2 +1,8 @@
+from menu.menu import *
+
+
+
 if __name__ == '__main__':
-    pass
+    while True:
+        exibir_menu()
+        escolher_opcao()

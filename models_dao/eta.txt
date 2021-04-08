@@ -1,5 +1,0 @@
-0, NOmecategoria, Descricao batete
-1, NOmecategoria, Descricao batete
-2, NOmecategoria, Descricao batete
-3, NOmecategoria, Descricao batete
-4, NOmecategoria, Descricao batete
