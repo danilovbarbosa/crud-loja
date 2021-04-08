@@ -19,4 +19,4 @@ Construído sobre uma plataforma Python 3
 
 
 ## Autores:
-- Danilo e Victor
+- Danilo e Victor.
