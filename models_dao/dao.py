@@ -38,6 +38,8 @@ class ProdutoDAO:
 
 
     def listar(self):
-        return 0
+        produtos = Arquivo.ler(self.nome_do_arquivo).splitlines()
+
+        return produtos
 
 
