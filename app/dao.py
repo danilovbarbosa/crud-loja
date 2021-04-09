@@ -1,5 +1,6 @@
 from .models import Categoria, Produto
-from .util import Arquivo  
+from .util import Arquivo
+import sqlite3  
 
 
 class CategoriaDAO:
@@ -8,9 +9,21 @@ class CategoriaDAO:
         Arquivo.criar(nome_do_arquivo)
 
 
-    def inserir(self, categoria): 
-        Arquivo.escrever(self.nome_do_arquivo, categoria)
+    # def inserir(self, categoria): 
+    #     Arquivo.escrever(self.nome_do_arquivo, categoria)
 
+
+    def inserir_dados_categoria(self, categoria):
+        try:
+            self.db.cursor.execute(f"""INSERTO INTO categorias (nome, descricao)
+            VALUES('{nome}', '{descricao}'))""")
+            self.db.commit()
+            print("Dados inseridos com sucesso !")
+        except sqlite3.IntegrityError:
+            print("Ocorreu um erro ao inserir dados")  
+            return False       
+   
+   
 
     def remover(self):
         '''
