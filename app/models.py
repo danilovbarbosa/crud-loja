@@ -1,5 +1,6 @@
-class Categoria:
-    def __init__(self, nome, descricao):
+class Category:
+    def __init__(self, id, nome, descricao):
+        self.id = id
         self.nome = nome
         self.descricao = descricao
 
@@ -7,13 +8,14 @@ class Categoria:
     def __str__(self):
         return self.nome + ", " + self.descricao
 
-class Produto:
-    def __init__(self, nome, valor, descricao, categoria):
+class Product:
+    def __init__(self, id, nome, value, descricao, categoria):
+        self.id = id
         self.nome = nome
-        self.valor = valor
+        self.value = value
         self.descricao = descricao
         self.categoria = categoria
 
     
     def __str__(self):
-        return self.nome + ", " + str(self.valor) + ", " + self.descricao + ", " + self.categoria
+        return self.nome + ", " + str(self.value) + ", " + self.descricao + ", " + self.categoria

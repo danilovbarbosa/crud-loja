@@ -1,5 +1,8 @@
 from .models import Categoria, Produto
-from .util import Arquivo  
+from .util import Arquivo 
+from context import Connect 
+
+
 
 
 class CategoriaDAO:
@@ -35,10 +38,17 @@ class CategoriaDAO:
                 return categoria[0]
 
 
-class ProdutoDAO:
-    def __init__(self, nome_do_arquivo):
-        self.nome_do_arquivo = nome_do_arquivo
-        Arquivo.criar(nome_do_arquivo)
+
+    ''' A classe ProductDb representa um produto no banco de dados. '''
+
+    
+
+   
+
+
+class ProdutoDAO(object):
+    def __init__(self):
+        self.db = Connect('product_category.db')
 
 
     def inserir(self, produto: Produto):
@@ -56,3 +66,6 @@ class ProdutoDAO:
         produtos = Arquivo.ler(self.nome_do_arquivo).splitlines()
 
         return produtos
+
+    def close_connection(self):
+        self.db.close_db()
