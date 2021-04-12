@@ -1,6 +1,5 @@
-from .models import Categoria, Produto
-from .util import Arquivo 
-from context import Connect 
+from .models import *
+from .context import *
 
 
 
@@ -11,7 +10,7 @@ class CategoriaDAO:
         Arquivo.criar(nome_do_arquivo)
 
 
-    def inserir(self, categoria): 
+    def inserir(self, categoria: Category): 
         Arquivo.escrever(self.nome_do_arquivo, categoria)
 
 
@@ -51,7 +50,7 @@ class ProdutoDAO(object):
         self.db = Connect('product_category.db')
 
 
-    def inserir(self, produto: Produto):
+    def inserir(self, produto: Product):
         Arquivo.escrever(self.nome_do_arquivo, produto)
 
 

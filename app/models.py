@@ -1,21 +1,23 @@
 class Category:
-    def __init__(self, id, nome, descricao):
-        self.id = id
-        self.nome = nome
-        self.descricao = descricao
+    def __init__(self, category_id, product_id, category_name, description):
+        self.category_id = category_id
+        self.product_id = product_id
+        self.category_name = category_name
+        self.description = description
 
 
     def __str__(self):
-        return self.nome + ", " + self.descricao
+        return self.category_name + ", " + self.description
 
 class Product:
-    def __init__(self, id, nome, value, descricao, categoria):
-        self.id = id
-        self.nome = nome
+    def __init__(self, product_id, category_id, product_name, value, description, category_name):
+        self.product_id = product_id
+        self.category_id = category_id
+        self.product_name = product_name
         self.value = value
-        self.descricao = descricao
-        self.categoria = categoria
+        self.description = description
+        self.category_name = category_name
 
     
     def __str__(self):
-        return self.nome + ", " + str(self.value) + ", " + self.descricao + ", " + self.categoria
+        return self.product_name + ", " + str(self.value) + ", " + self.description + ", " + self.category_name
